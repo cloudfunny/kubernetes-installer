@@ -2,6 +2,21 @@ package model
 
 import "gorm.io/gorm"
 
+var (
+	WatchClusterChan chan *Event
+	WatchNodeChan    chan *Event
+)
+
+type Event struct {
+	Opt string
+	Obj interface{}
+}
+
+func init() {
+	WatchClusterChan = make(chan *Event, 128)
+	WatchNodeChan = make(chan *Event, 128)
+}
+
 func CreateCluster(name string, version string, podnetcidr string, registry string) *Cluster {
 	newCluster := &Cluster{
 		Name:       name,
