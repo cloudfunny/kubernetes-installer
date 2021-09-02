@@ -7,7 +7,7 @@ import (
 
 func main() {
 	// new server
-	server := httpserver.InitServer("127.0.0.1", 8000)
+	server := httpserver.InitServer("127.0.0.1", 8080)
 	server.RegisterHandler()
 	server.Run()
 }

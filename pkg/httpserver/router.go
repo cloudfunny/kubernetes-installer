@@ -9,9 +9,12 @@ import (
 
 func (s *Server) RegisterHandler() {
 	s.addFunc("/clusters", "GET", listAllClusters)
-	s.addFunc("/clusters/:id", "GET", listAllClusters)
+	s.addFunc("/clusters/watch", "GET", watchClusters)
+	s.addFunc("/clusters/:id", "GET", queryClusterByID)
 	s.addFunc("/clusters", "POST", createCluster)
+
 	s.addFunc("/clusters/:id/node/register", "POST", registerNode)
+	s.addFunc("/nodes/watch", "GET", watchNodes)
 }
 
 // hello world for test

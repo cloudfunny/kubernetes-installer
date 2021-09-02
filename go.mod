@@ -3,6 +3,7 @@ module github.com/cloudfunny/kubernetes-installer
 go 1.14
 
 require (
+	github.com/coreos/go-json v0.0.0-20200220154158-5ae607161559
 	github.com/gin-gonic/gin v1.7.4
 	github.com/go-playground/validator/v10 v10.9.0 // indirect
 	github.com/golang/protobuf v1.5.2 // indirect
